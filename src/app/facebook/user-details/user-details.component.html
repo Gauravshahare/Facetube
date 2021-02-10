@@ -1,4 +1,7 @@
-<p>user-details works!</p>
-<div *ngIf="user$ | async  as user" >
-    {{user|json}}
+<div class="container-fluid">
+
+    <div *ngIf="user$ | async  as user" >
+        <address [add]="user.address"></address>
+        <company [company]="user.company"></company>
+    </div>
 </div>

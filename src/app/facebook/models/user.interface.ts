@@ -3,22 +3,28 @@ export interface User {
     name: string,
     username: string,
     email: string,
-    address: {
-        street: string,
-        suit: string,
-        city: string,
-        zipcode: string,
-    },
+    address: Address,
     geo: {
         lat: number,
         lng: number
     },
     phone: string,
     website: string,
-    company: {
-        name: string,
-        catchPhrase: string,
-        bs: string
-    }
+    company: Company
 
+}
+export interface Address {
+    street: string,
+    suite: string,
+    city: string,
+    zipcode: string,
+    geo: {
+        lat: number,
+        lng: number
+    }
+}
+export interface Company {
+    name: string,
+    catchPhrase: string,
+    bs: string
 }
