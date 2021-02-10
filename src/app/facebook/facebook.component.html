@@ -1,0 +1,10 @@
+<div class="container-fluid" *ngIf="users$ |async as users">
+    <div class="row user" *ngFor="let user of users">
+        <div>
+            <a [routerLink]="['user-details',user.id]">
+                {{user.name}}
+            </a>
+        </div>
+    </div>
+</div>
+
