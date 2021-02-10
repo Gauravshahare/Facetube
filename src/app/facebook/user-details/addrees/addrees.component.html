@@ -1,8 +1,10 @@
-<div class="container-fluid">
-    {{add.city}}
-    {{add.geo.lat}}
-    {{add.geo.lng}}
-    {{add.street}}
-    {{add.suite}}
-    {{add.zipcode}}
+<div class="container-fluid body-top">
+    <div class="card">
+        <h3 style="text-align: center;">Address</h3>
+        <ul class="list-group list-group-flush" *ngIf="add" >
+            <li class="list-group-item">{{add.city}}</li>
+            <li class="list-group-item">{{add.street}}</li>
+            <li class="list-group-item">{{add.zipcode}}</li>
+        </ul>
+    </div>
 </div>

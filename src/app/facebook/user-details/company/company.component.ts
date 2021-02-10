@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Company } from '../../models/user.interface';
+import { ActivatedRoute } from '@angular/router';
+import { Address, Company } from '../../models/user.interface';
 
 @Component({
   selector: 'company',
@@ -8,12 +9,24 @@ import { Company } from '../../models/user.interface';
 })
 export class CompanyComponent implements OnInit {
 
-  @Input() company:Company;
-  constructor() { }
-    
-  
+  company: Company;
+  errorMessage: string;
+
+
+  constructor(private route: ActivatedRoute) { }
+
+
 
   ngOnInit(): void {
+    this.route.parent.data.subscribe(
+      data => {
+        let resolvedUser = data['resolvedUser'];
+        this.errorMessage = resolvedUser.error;
+        this.onUserRetrived(resolvedUser.user.company);
+      }
+    )
   }
-
+  onUserRetrived(company:Company){
+    this.company=company;
+  }
 }

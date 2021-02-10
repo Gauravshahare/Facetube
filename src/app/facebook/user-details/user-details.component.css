@@ -1,0 +1,7 @@
+.user-btn{
+    margin: 5px 20px;
+}
+.btn-footer{
+    display: flex;
+    justify-content: flex-end;
+}

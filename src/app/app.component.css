@@ -1,0 +1,11 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content:left;
+    padding: 15px;
+    background-color: rgb(10, 55, 133);
+}
+.nav-item{
+    margin: 0px 10px;
+    color: white;
+}

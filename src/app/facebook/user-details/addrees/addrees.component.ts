@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Address } from '../../models/user.interface';
+import { ActivatedRoute } from '@angular/router';
+import { Address, UserResolved } from '../../models/user.interface';
 
 @Component({
   selector: 'address',
@@ -8,9 +9,24 @@ import { Address } from '../../models/user.interface';
 })
 export class AddreesComponent implements OnInit {
 
-  constructor() { }
-  @Input() add:Address
+  constructor(private route: ActivatedRoute) { }
+  add: Address;
+  errorMessage: string;
+
   ngOnInit(): void {
+
+    this.route.parent.data.subscribe(
+      data => {
+        let resolvedUser:UserResolved = data['resolvedUser'];
+        this.errorMessage = resolvedUser.error;
+        this.onUserRetrived(resolvedUser.user.address);
+      }
+    )
+
+
+  }
+  onUserRetrived(add: Address) {
+    this.add = add;
   }
 
 }

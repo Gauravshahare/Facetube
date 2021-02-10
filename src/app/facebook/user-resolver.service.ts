@@ -18,6 +18,9 @@ export class UserResolverService implements Resolve<UserResolved> {
       console.error(message);
       return of({user:null,error:message})
     }
+    setTimeout(()=>{
+      console.log("sleep");
+    },1000);
     return this.facebookService.getUser(+id)
             .pipe(
               map(user=>({user:user})),

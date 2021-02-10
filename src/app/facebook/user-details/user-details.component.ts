@@ -18,9 +18,14 @@ export class UserDetailsComponent implements OnInit {
               private facebookService:FacebookService) { }
               
   ngOnInit(): void {
-    const resolvedUser:UserResolved=this.route.snapshot.data['resolvedUser'];
-    this.errorMessage=resolvedUser.error;
-    this.onUserRetrived(resolvedUser.user);
+    
+    this.route.data.subscribe(
+        data=>{
+            let resolvedUser=data['resolvedUser'];
+            this.errorMessage=resolvedUser.error;
+            this.onUserRetrived(resolvedUser.user);
+          }
+    )    
   }
   onUserRetrived(user:User){
     this.user=user;

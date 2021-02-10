@@ -1,11 +1,17 @@
-<nav>
-  <div class="row">
-    <ul>
-      <li><a>Home</a></li>
-      <li><a>Facbook</a></li>
-      <li><a>Youtube</a></li>
-    </ul>
-  </div>
-</nav>
 
-<router-outlet></router-outlet>
+<div class="container-fluid" *ngIf="loading">
+    Loading
+</div>
+
+<div class="container-fluid" *ngIf="!loading"> 
+  <nav>
+    <div class="navbar">
+            <div class="nav-item"><a>Youtube</a></div>
+            <div class="nav-item"><a>Facebook</a></div>
+            <div class="nav-item"><a>Home</a></div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+
+

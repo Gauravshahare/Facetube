@@ -1,7 +1,13 @@
-<div class="container-fluid">
+<div class="container-fluid body-top">
+    <a class="btn btn-primary user-btn" href="#" role="button">Address</a>
+    <a class="btn btn-primary user-btn" href="#" role="button">Company</a>
 
-    <div *ngIf="user">
-        <address [add]="user.address"></address>
-        <company [company]="user.company"></company>
+    <!-- <address [add]="user.address"></address>
+    <company [company]="user.company"></company> -->
+    <router-outlet></router-outlet>
+
+    <div class="body-top btn-footer">
+        <a class="btn btn-primary user-btn" href="#" role="button">Back</a>
+        <a class="btn btn-primary user-btn" href="#" role="button">Continue</a>
     </div>
 </div>
