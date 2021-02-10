@@ -14,12 +14,11 @@ export interface User {
     company: Company
 
 }
-<<<<<<< HEAD
 
 export interface UserResolved{
     user:User,
     error?:any
-=======
+}
 export interface Address {
     street: string,
     suite: string,
@@ -34,5 +33,4 @@ export interface Company {
     name: string,
     catchPhrase: string,
     bs: string
->>>>>>> 05df0d88d893af20b0d1bd3df18ea4ec54e82c91
 }

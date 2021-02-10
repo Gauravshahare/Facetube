@@ -11,7 +11,6 @@ import { User, UserResolved } from '../models/user.interface';
 })
 export class UserDetailsComponent implements OnInit {
 
-<<<<<<< HEAD
   user:User;
   errorMessage:string;
   
@@ -25,29 +24,10 @@ export class UserDetailsComponent implements OnInit {
   }
   onUserRetrived(user:User){
     this.user=user;
-=======
-  user$: Observable<User> = of();
-  id1: number = 0;
-  constructor(private route: ActivatedRoute,
-    private facebookService: FacebookService) { }
-
-  getUser(id: number) {
-    this.user$ = this.facebookService.getUser(id);
+  }
+ 
   }
 
 
-  ngOnInit(): void {
-    this.route.paramMap.subscribe(
-      params =>{
-        const id=+params.get('id');
-        this.getUser(id);
-      }
-    )
+  
 
-    // const id: number = parseInt(this.route.snapshot.paramMap.get('id'));
-    // console.log(id);
-    // this.user$ = this.facebookService.getUser(1);
->>>>>>> 05df0d88d893af20b0d1bd3df18ea4ec54e82c91
-  }
-
-}

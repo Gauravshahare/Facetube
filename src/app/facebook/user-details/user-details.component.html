@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-    <div *ngIf="user$ | async  as user" >
+    <div *ngIf="user">
         <address [add]="user.address"></address>
         <company [company]="user.company"></company>
     </div>
