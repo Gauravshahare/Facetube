@@ -4,7 +4,7 @@ import { User } from '../facebook/models/user.interface';
 import { EMPTY, Observable, of, throwError } from 'rxjs';
 import { catchError, single, tap,map, concatAll } from 'rxjs/operators'
 @Injectable({
-  providedIn: 'root'
+  providedIn:'root'
 })
 export class FacebookService {
 
