@@ -7,6 +7,9 @@ import { User } from './user';
 export class AuthService {
   currentuser: User;
   constructor() { }
+  get isLoggedIn():boolean{
+    return !!this.currentuser;
+  }
   login(userName: string, password: string): void {
     if (!userName || !password) {
       return;

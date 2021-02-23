@@ -9,14 +9,13 @@ import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CoreModule,
-    SharedModule
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
