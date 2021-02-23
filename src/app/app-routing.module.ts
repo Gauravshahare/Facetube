@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [{ path: 'facebook', loadChildren: () => import('./facebook/facebook.module').then(m => m.FacebookModule) },
+      { path: 'login', loadChildren: () => import('./user/user.module').then(m => m.UserModule)},
       {path:'',redirectTo:'/facebook',pathMatch:'full'},
       {path:'**',redirectTo:'/facebook'}
 ];
